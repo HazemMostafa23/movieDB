@@ -232,18 +232,20 @@ span{
       }
       .column2{
         /* margin-left:-10%; */
-        width:800px;
+        width:150%;
         margin-top:-5%;
-        /* background-color:aqua ; */
+        background-color:aqua ;
       }
       .details{
-        padding: 3% 0 0 7%;
+        padding: 0% 0 0 7%;
+        margin-left:25%;
       }
    
       .details .title1{
-        margin-top:15%;
+        margin-top:0%;
+        
         width:200%;
-        font-size:20px;
+        font-size:40px;
       }
       .details .title1 span {
        
