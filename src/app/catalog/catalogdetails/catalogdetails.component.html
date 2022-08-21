@@ -39,11 +39,10 @@
         <div class="cast">
           <p class="title">Top Cast </p>
           <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 rowitems" *ngFor="let in of counter(8);let i=index">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 rowitems" *ngFor="let in of counter(6);let i=index">
               <div class="row">
                 <span class="actor">{{cast!.cast[i]!.original_name}}</span><br>
-              </div>
-              <div class="row">
+          
                 <span class="char">{{cast!.cast[i]!.character}}</span>
               </div>
               <br>
