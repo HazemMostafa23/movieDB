@@ -1,0 +1,22 @@
+
+
+h1{
+    /* display: block; */
+    color:white;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-weight: bold;
+  
+    position:relative;
+    
+}
+.center {
+    margin-left: auto;  
+    margin-right:auto;
+    margin-bottom:50px;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+  }
+  .container{
+    display: grid; 
+    /* margin-top:10px;  */
+  }

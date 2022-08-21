@@ -1,0 +1,48 @@
+
+    <div class="movie-card">
+      <a
+   
+  style="cursor: pointer;"
+  [routerLink]="['/catalog',movie.id]"
+  routerLinkActive="active"
+  class="clearfix">
+      <div class="movie-header">
+        <img src={{baseUrl+movie.poster_path}} class="movie-header">
+        <div class="header-icon-container">
+          
+        </div>
+      </div><!--movie-header-->
+      <div class="movie-content">
+        <div class="movie-content-header">
+          <a href="#">
+            <h3 class="movie-title">{{movie.original_title  }}</h3>
+          </a>
+          <!-- <div class="imax-logo"></div> -->
+        </div>
+        <div class="movie-info">
+          <div class="info-section">
+            <label>Release Date</label>
+            <span>{{movie.release_date.substr(0,4)}}</span>
+          </div><!--date,time-->
+          <div class="info-section">
+            <label>PG</label>
+            <span>{{movie.adult?'R':'G'}}</span>
+          </div><!--screen-->
+          <div class="info-section rating">
+            <label>Rating</label>
+            <span>{{movie.vote_average}}</span>
+          </div><!--row-->
+          <div class="info-section">
+            <label>Language</label>
+            <span>{{movie.original_language}}</span>
+           
+          </div><!--seat-->
+        </div>
+      </div><!--movie-content-->
+    </a>
+    </div><!--movie-card-->
+
+
+
+<br>
+

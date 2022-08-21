@@ -1,0 +1,25 @@
+
+.navbar{
+
+margin-left:18%;
+margin-right:15%;
+padding: 0px !important;
+}
+.container{
+
+    width:100%;
+    padding: 0px !important;
+}
+.btn{
+
+   
+    background-color: white;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    position: relative;
+
+  
+}
+
+
+
