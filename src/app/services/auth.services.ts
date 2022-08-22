@@ -16,6 +16,7 @@ export class AuthServices
     for(let i=0;i<this.Users.length;i++){
         if(this.Users[i].email==user.email && this.Users[i].password==user.password){
             this.user.next(user);
+            localStorage.setItem('userData',JSON.stringify(user));
             return true;
 
         }
@@ -26,6 +27,20 @@ export class AuthServices
    }
    signOut(){
     this.user.next(null);
+    localStorage.removeItem('userData');
+   }
+   autoSignIn(){
+    let localuserData=localStorage.getItem('userData');
+   if(localuserData!=null){
+    const userData:{
+        email:string;
+        password:string;
+    }=JSON.parse(localuserData);
+    this.user.next(userData);
+   }
+   else {
+    return;
+   }
    }
 
 }
