@@ -29,8 +29,6 @@ export class CataloglistComponent implements OnInit {
       this.catalogServices.getMovies(this.page).subscribe((data) => {
         this.movies = data;
         this.total_pages=this.movies.total_pages;
-        console.log(this.movies);
-        console.log(this.movies.results);
   
       });
       
@@ -46,6 +44,7 @@ export class CataloglistComponent implements OnInit {
       });
       
     }
+ 
    
   
 
