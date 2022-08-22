@@ -1,4 +1,8 @@
-<div class="container">
+
+<div class="container" *ngIf="!exists">
+<a   [routerLink]="['/catalog']" class="center" >Wrong movie ID, Please return back to the catalog page by pressing this link.</a>
+</div>
+<div class="container" *ngIf="exists">
   <div class="movie-card">
     <img src={{baseUrl+movie?.poster_path}} alt="cover" class="cover" />
     <div class="hero">

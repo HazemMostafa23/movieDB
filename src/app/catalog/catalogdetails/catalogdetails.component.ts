@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Movie} from 'src/app/models/movie.model';
 import{Cast}from'src/app/models/cast.model'
-import { DataServices } from 'src/app/services/data.services';
 import { Subscription } from 'rxjs';
 import { CatalogServices } from 'src/app/services/catalog.services';
 import { Reviews } from 'src/app/models/reviews.model';
@@ -22,8 +21,9 @@ export class CatalogdetailsComponent implements OnInit , OnDestroy{
   movieSub!:Subscription;
   castSub!:Subscription;
   reviewSub!:Subscription;
+  exists:boolean=false;
 
-  constructor(private route: ActivatedRoute,private dataService:DataServices,catalogServices:CatalogServices) {
+  constructor(private route: ActivatedRoute,private catalogServices:CatalogServices , private router:Router) {
     this.baseUrl=catalogServices.baseUrl;
    }
 
@@ -37,20 +37,23 @@ export class CatalogdetailsComponent implements OnInit , OnDestroy{
          
         }
       );
-      this.movieSub=this.dataService.getMovie(this.id).subscribe(movieData=>{
+      this.movieSub=this.catalogServices.getMovie(this.id).subscribe(movieData=>{
+        
         this.movie=movieData;
- 
+        this.exists=true;
 
       });
-      this.castSub=this.dataService.getCast(this.id).subscribe(castData=>{
+      this.castSub=this.catalogServices.getCast(this.id).subscribe(castData=>{
         this.cast=castData;
 
       });
-      this.reviewSub=this.dataService.getReviews(this.id).subscribe(reviewData=>{
+      this.reviewSub=this.catalogServices.getReviews(this.id).subscribe(reviewData=>{
         this.reviews=reviewData;
        
 
       });
+      
+     
   }
   ngOnDestroy(): void {
     this.paraSub.unsubscribe();

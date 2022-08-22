@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { DataServices } from 'src/app/services/data.services';
+import { CatalogServices } from 'src/app/services/catalog.services';
 
 import { Movies} from '../../models/movies.model';
 
@@ -15,7 +15,7 @@ export class CataloglistComponent implements OnInit {
 
   page:number=1;
   total_pages!:number;
-  constructor( private dataServices:DataServices) { 
+  constructor( private catalogServices:CatalogServices) { 
 
   }
 
@@ -26,7 +26,7 @@ export class CataloglistComponent implements OnInit {
     }
 
     getMovies(){
-      this.dataServices.getMovies(this.page).subscribe((data) => {
+      this.catalogServices.getMovies(this.page).subscribe((data) => {
         this.movies = data;
         this.total_pages=this.movies.total_pages;
         console.log(this.movies);
@@ -37,7 +37,7 @@ export class CataloglistComponent implements OnInit {
     }
     onLoadMore(){
       this.page+=1;
-      this.dataServices.getMovies(this.page).subscribe((data) => {
+      this.catalogServices.getMovies(this.page).subscribe((data) => {
         
         this.movies.results.push(...data.results);
        

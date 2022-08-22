@@ -211,7 +211,17 @@ span{
   padding:20px;
   border-color:yellow;
 }
-
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size:25px;
+  color: white;
+  margin-top:30%;
+}
 @media (max-width: 1600px) { 
    .castimg{
     width:40%;
